@@ -1,8 +1,8 @@
 const allOrders = [
     {
         id: 1,
-        name: "Arfin Priom",
-        email: 'arfinpriom12@gmail.com',
+        name: "Talha Mahfuz",
+        email: 'talhamahfuz12@gmail.com',
         product: 'Iphone 16 Pro',
         status: 'Fulfilled',
         price: 250,

@@ -4,14 +4,14 @@ import { Chart } from "react-google-charts";
 
 export const data = [
     ["Country", "Users"],
-    ["Bangladesh", 100],
+    ["Bangladesh", 200],
     ["India", 200],
     ["Germany", 200],
     ["United States", 300],
     ["Brazil", 400],
-    ["Canada", 500],
+    ["Canada", 800],
     ["France", 600],
-    ["RU", 700],
+    ["RU", 300],
 ];
 
 export default function Geography() {

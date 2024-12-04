@@ -12,7 +12,7 @@ import { useProducts } from "@/lib/useProducts"
 import { useOrders } from "@/lib/useOrders"
 import React from "react"
 
-const SummuryCard = () => {
+const SummaryCard = () => {
     const { customers } = useCustomers()
     const { products } = useProducts()
     const { orders } = useOrders()
@@ -40,7 +40,7 @@ const SummuryCard = () => {
     const totalRevenue = React.useMemo(() => calculateTotalRevenue(orders), [orders]);
     const totalDue = React.useMemo(() => calculateTotalDue(orders), [orders]);
 
-    const dashboardSummury = [
+    const dashboardSummary = [
         {
             id: 1,
             title: "Total Revenue",
@@ -78,20 +78,20 @@ const SummuryCard = () => {
     return (
         <div className="grid gap-2 grid-cols-2 md:gap-8 lg:grid-cols-4">
             {
-                dashboardSummury.map((summury, index) => {
+                dashboardSummary.map((summary, index) => {
                     const firstCard = index === 0
                     return (
-                        <Card key={summury.id} x-chunk={`dashboard-01-chunk-${index}`} className={`${firstCard ? 'border border-primary' : 'border-none shadow-xl'}`}>
+                        <Card key={summary.id} x-chunk={`dashboard-01-chunk-${index}`} className={`${firstCard ? 'border border-primary' : 'border-none shadow-xl'}`}>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">
-                                    {summury.title}
+                                    {summary.title}
                                 </CardTitle>
-                                {summury.icon}
+                                {summary.icon}
                             </CardHeader>
                             <CardContent>
-                                <div className="text-lg lg:text-2xl font-bold">{summury.sign} {summury.value}</div>
+                                <div className="text-lg lg:text-2xl font-bold">{summary.sign} {summary.value}</div>
                                 <p className="text-xs text-muted-foreground">
-                                    {summury.subDetails}
+                                    {summary.subDetails}
                                 </p>
                             </CardContent>
                         </Card>
@@ -101,4 +101,4 @@ const SummuryCard = () => {
     )
 }
 
-export default SummuryCard
+export default SummaryCard
